@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        #contador {
+            font-weight: bold;
+            color: #007acc;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #005f99;
+        }
+        ul {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Título principal -->
+    <h1>Lista de Tareas</h1>
+
+    <!-- Contador de tareas -->
+    <p>Total de tareas: <span id="contador">0</span></p>
+
+    <!-- Campo de texto para escribir la tarea -->
+    <input type="text" id="input-tarea" placeholder="Escribe una nueva tarea">
+
+    <!-- Botón para agregar nuevas tareas -->
+    <button onclick="agregarTarea()">Agregar Tarea</button>
+
+    <!-- Contenedor de la lista de tareas -->
+    <ul id="lista-tareas"></ul>
+
+    <script>
+        // Variable global para llevar el conteo de tareas
+        let contador = 0;
+
+        // Función que se ejecuta al hacer clic en el botón
+        function agregarTarea() {
+            // Obtiene el input
+            const input = document.getElementById("input-tarea");
+            const textoTarea = input.value.trim(); // Elimina espacios en blanco
+
+            // Verifica que no esté vacío
+            if (textoTarea === "") {
+                alert("Por favor escribe una tarea antes de agregarla.");
+                return;
+            }
+
+            // Incrementa el contador en 1
+            contador++;
+
+            // Obtiene el contenedor de la lista (ul)
+            const lista = document.getElementById("lista-tareas");
+
+            // Crea un nuevo elemento <li>
+            const nuevaTarea = document.createElement("li");
+
+            // Asigna el texto escrito al nuevo <li>
+            nuevaTarea.textContent = textoTarea;
+
+            // Agrega el nuevo <li> a la lista
+            lista.appendChild(nuevaTarea);
+
+            // Obtiene el span del contador
+            const spanContador = document.getElementById("contador");
+
+            // Actualiza el texto del span con el nuevo valor
+            spanContador.textContent = contador;
+
+            // Limpia el input para escribir otra tarea
+            input.value = "";
+        }
+    </script>
+
+</body>
+</html>
