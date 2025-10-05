@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Hashes</title>
+  <script src="hashes.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 5px;
+      margin: 5px 10px 5px 0;
+    }
+    button {
+      padding: 6px 12px;
+      margin: 5px 5px 5px 0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    #mensaje {
+      color: red;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Registro de Hashes</h1>
+
+  <form id="formRegistro">
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="number" id="edad" placeholder="Edad">
+    <input type="email" id="correo" placeholder="Correo electrónico">
+    <button type="submit">Registrar</button>
+    <div id="mensaje"></div>
+  </form>
+
+  <button id="eliminarRegistro">Eliminar registro por clave</button>
+
+  <div id="tabla-contenedor"></div>
+</body>
+</html>
